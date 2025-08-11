@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="c">°C</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="f">°F</string>
+    <string name="celsius">Celsius</string>
+    <string name="temperature_converter">Temperature Converter</string>
+    <string name="enter_celsius">Enter Celsius</string>
+</resources>

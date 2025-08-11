@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.harsh.temperatureconverter.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:padding="24dp"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/fahrenheit_output"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.fahrenheitFormatted}"
+            android:textColor="@color/text_primary"
+            android:textSize="72sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/celsius_input_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="212.00°" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/celsius_input_layout"
+            style="@style/RoundedTextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            app:suffixText="°C"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fahrenheit_output"
+            app:layout_constraintWidth_percent="0.8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/celsius_input"
+                style="@style/RoundedTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="@={viewModel.celsius}"
+                android:hint="@string/enter_celsius"
+                tools:text="100" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
